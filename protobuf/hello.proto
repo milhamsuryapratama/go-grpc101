@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option go_package = "grpc/hello;hello";
+package hello;
+
+// The user service definition.
+service UserService {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloResponse) {}
+  // Sends a farewell
+  rpc SayGoodbye (HelloRequest) returns (HelloResponse) {}
+  
+  rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) {}
+  rpc GetUser (HelloRequest) returns (GetUserResponse) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloResponse {
+  string message = 1;
+}
+
+message User {
+  string name = 1;
+  int32 age = 2;
+  string email = 3;
+  repeated string hobbies = 4;
+}
+
+message CreateUserRequest {
+  User user = 1;
+}
+
+message CreateUserResponse {
+  string message = 1;
+  User user = 2;
+}
+
+message GetUserRequest {
+  string name = 1;
+  string email = 2;
+}
+
+message GetUserResponse {
+  repeated User users = 1;
+}
