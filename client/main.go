@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	conn, err := grpc.NewClient("localhost:9090", grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.NewClient("localhost:8081", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
 	}
@@ -19,30 +19,30 @@ func main() {
 	log.Println("Connected to server")
 
 	s := pbHello.NewUserServiceClient(conn)
-	resp, err := s.CreateUser(context.Background(), &pbHello.CreateUserRequest{
-		User: &pbHello.User{
-			Name:  "Ilham",
-			Email: "ilham@gmail.com",
-		},
-	})
+	// resp, err := s.CreateUser(context.Background(), &pbHello.CreateUserRequest{
+	// 	User: &pbHello.User{
+	// 		Name:  "Ilham",
+	// 		Email: "ilham@gmail.com",
+	// 	},
+	// })
 
+	// if err != nil {
+	// 	log.Fatalf("could not create user: %v", err)
+	// }
+
+	// log.Println("User created successfully", resp.User.Name, resp.User.Email)
+
+	resp, err := s.SayHello(context.Background(), &pbHello.HelloRequest{Name: "ighfar hasbi"})
 	if err != nil {
-		log.Fatalf("could not create user: %v", err)
+		panic(err)
 	}
 
-	log.Println("User created successfully", resp.User.Name, resp.User.Email)
+	log.Printf("Greeting: %s", resp.Message)
 
-	// resp, err := s.SayHello(context.Background(), &pbHello.HelloRequest{Name: "Ilham"})
-	// if err != nil {
-	// 	panic(err)
-	// }
+	gb, err := s.SayGoodbye(context.Background(), &pbHello.HelloRequest{Name: "ipay yapi"})
+	if err != nil {
+		panic(err)
+	}
 
-	// log.Printf("Greeting: %s", resp.Message)
-
-	// gb, err := s.SayGoodbye(context.Background(), &pbHello.HelloRequest{Name: "Kay"})
-	// if err != nil {
-	// 	panic(err)
-	// }
-
-	// log.Printf("Greeting: %s", gb.Message)
+	log.Printf("Greeting: %s", gb.Message)
 }
