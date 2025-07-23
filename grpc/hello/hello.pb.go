@@ -2,16 +2,17 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v5.29.3
-// source: hello.proto
+// source: protobuf/hello.proto
 
 package hello
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -31,7 +32,7 @@ type HelloRequest struct {
 
 func (x *HelloRequest) Reset() {
 	*x = HelloRequest{}
-	mi := &file_hello_proto_msgTypes[0]
+	mi := &file_protobuf_hello_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43,7 +44,7 @@ func (x *HelloRequest) String() string {
 func (*HelloRequest) ProtoMessage() {}
 
 func (x *HelloRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_hello_proto_msgTypes[0]
+	mi := &file_protobuf_hello_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -56,7 +57,7 @@ func (x *HelloRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HelloRequest.ProtoReflect.Descriptor instead.
 func (*HelloRequest) Descriptor() ([]byte, []int) {
-	return file_hello_proto_rawDescGZIP(), []int{0}
+	return file_protobuf_hello_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *HelloRequest) GetName() string {
@@ -76,7 +77,7 @@ type HelloResponse struct {
 
 func (x *HelloResponse) Reset() {
 	*x = HelloResponse{}
-	mi := &file_hello_proto_msgTypes[1]
+	mi := &file_protobuf_hello_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -88,7 +89,7 @@ func (x *HelloResponse) String() string {
 func (*HelloResponse) ProtoMessage() {}
 
 func (x *HelloResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_hello_proto_msgTypes[1]
+	mi := &file_protobuf_hello_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -101,7 +102,7 @@ func (x *HelloResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HelloResponse.ProtoReflect.Descriptor instead.
 func (*HelloResponse) Descriptor() ([]byte, []int) {
-	return file_hello_proto_rawDescGZIP(), []int{1}
+	return file_protobuf_hello_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *HelloResponse) GetMessage() string {
@@ -123,7 +124,7 @@ type User struct {
 
 func (x *User) Reset() {
 	*x = User{}
-	mi := &file_hello_proto_msgTypes[2]
+	mi := &file_protobuf_hello_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -135,7 +136,7 @@ func (x *User) String() string {
 func (*User) ProtoMessage() {}
 
 func (x *User) ProtoReflect() protoreflect.Message {
-	mi := &file_hello_proto_msgTypes[2]
+	mi := &file_protobuf_hello_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -148,7 +149,7 @@ func (x *User) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use User.ProtoReflect.Descriptor instead.
 func (*User) Descriptor() ([]byte, []int) {
-	return file_hello_proto_rawDescGZIP(), []int{2}
+	return file_protobuf_hello_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *User) GetName() string {
@@ -188,7 +189,7 @@ type CreateUserRequest struct {
 
 func (x *CreateUserRequest) Reset() {
 	*x = CreateUserRequest{}
-	mi := &file_hello_proto_msgTypes[3]
+	mi := &file_protobuf_hello_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -200,7 +201,7 @@ func (x *CreateUserRequest) String() string {
 func (*CreateUserRequest) ProtoMessage() {}
 
 func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_hello_proto_msgTypes[3]
+	mi := &file_protobuf_hello_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -213,7 +214,7 @@ func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserRequest.ProtoReflect.Descriptor instead.
 func (*CreateUserRequest) Descriptor() ([]byte, []int) {
-	return file_hello_proto_rawDescGZIP(), []int{3}
+	return file_protobuf_hello_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateUserRequest) GetUser() *User {
@@ -233,7 +234,7 @@ type CreateUserResponse struct {
 
 func (x *CreateUserResponse) Reset() {
 	*x = CreateUserResponse{}
-	mi := &file_hello_proto_msgTypes[4]
+	mi := &file_protobuf_hello_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -245,7 +246,7 @@ func (x *CreateUserResponse) String() string {
 func (*CreateUserResponse) ProtoMessage() {}
 
 func (x *CreateUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_hello_proto_msgTypes[4]
+	mi := &file_protobuf_hello_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -258,7 +259,7 @@ func (x *CreateUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateUserResponse.ProtoReflect.Descriptor instead.
 func (*CreateUserResponse) Descriptor() ([]byte, []int) {
-	return file_hello_proto_rawDescGZIP(), []int{4}
+	return file_protobuf_hello_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateUserResponse) GetMessage() string {
@@ -285,7 +286,7 @@ type GetUserRequest struct {
 
 func (x *GetUserRequest) Reset() {
 	*x = GetUserRequest{}
-	mi := &file_hello_proto_msgTypes[5]
+	mi := &file_protobuf_hello_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -297,7 +298,7 @@ func (x *GetUserRequest) String() string {
 func (*GetUserRequest) ProtoMessage() {}
 
 func (x *GetUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_hello_proto_msgTypes[5]
+	mi := &file_protobuf_hello_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -310,7 +311,7 @@ func (x *GetUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserRequest.ProtoReflect.Descriptor instead.
 func (*GetUserRequest) Descriptor() ([]byte, []int) {
-	return file_hello_proto_rawDescGZIP(), []int{5}
+	return file_protobuf_hello_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetUserRequest) GetName() string {
@@ -336,7 +337,7 @@ type GetUserResponse struct {
 
 func (x *GetUserResponse) Reset() {
 	*x = GetUserResponse{}
-	mi := &file_hello_proto_msgTypes[6]
+	mi := &file_protobuf_hello_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -348,7 +349,7 @@ func (x *GetUserResponse) String() string {
 func (*GetUserResponse) ProtoMessage() {}
 
 func (x *GetUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_hello_proto_msgTypes[6]
+	mi := &file_protobuf_hello_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -361,7 +362,7 @@ func (x *GetUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserResponse.ProtoReflect.Descriptor instead.
 func (*GetUserResponse) Descriptor() ([]byte, []int) {
-	return file_hello_proto_rawDescGZIP(), []int{6}
+	return file_protobuf_hello_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetUserResponse) GetUsers() []*User {
@@ -371,11 +372,159 @@ func (x *GetUserResponse) GetUsers() []*User {
 	return nil
 }
 
-var File_hello_proto protoreflect.FileDescriptor
+type GetUserByIdRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
 
-const file_hello_proto_rawDesc = "" +
+func (x *GetUserByIdRequest) Reset() {
+	*x = GetUserByIdRequest{}
+	mi := &file_protobuf_hello_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUserByIdRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserByIdRequest) ProtoMessage() {}
+
+func (x *GetUserByIdRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_protobuf_hello_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserByIdRequest.ProtoReflect.Descriptor instead.
+func (*GetUserByIdRequest) Descriptor() ([]byte, []int) {
+	return file_protobuf_hello_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *GetUserByIdRequest) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type UserDb struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UserDb) Reset() {
+	*x = UserDb{}
+	mi := &file_protobuf_hello_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UserDb) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserDb) ProtoMessage() {}
+
+func (x *UserDb) ProtoReflect() protoreflect.Message {
+	mi := &file_protobuf_hello_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserDb.ProtoReflect.Descriptor instead.
+func (*UserDb) Descriptor() ([]byte, []int) {
+	return file_protobuf_hello_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *UserDb) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *UserDb) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *UserDb) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+type GetUserByIdResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UsersDb       *UserDb                `protobuf:"bytes,1,opt,name=users_db,json=usersDb,proto3" json:"users_db,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetUserByIdResponse) Reset() {
+	*x = GetUserByIdResponse{}
+	mi := &file_protobuf_hello_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUserByIdResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserByIdResponse) ProtoMessage() {}
+
+func (x *GetUserByIdResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_protobuf_hello_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserByIdResponse.ProtoReflect.Descriptor instead.
+func (*GetUserByIdResponse) Descriptor() ([]byte, []int) {
+	return file_protobuf_hello_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *GetUserByIdResponse) GetUsersDb() *UserDb {
+	if x != nil {
+		return x.UsersDb
+	}
+	return nil
+}
+
+var File_protobuf_hello_proto protoreflect.FileDescriptor
+
+const file_protobuf_hello_proto_rawDesc = "" +
 	"\n" +
-	"\vhello.proto\x12\x05hello\"\"\n" +
+	"\x14protobuf/hello.proto\x12\x05hello\"\"\n" +
 	"\fHelloRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\")\n" +
 	"\rHelloResponse\x12\x18\n" +
@@ -394,76 +543,91 @@ const file_hello_proto_rawDesc = "" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\"4\n" +
 	"\x0fGetUserResponse\x12!\n" +
-	"\x05users\x18\x01 \x03(\v2\v.hello.UserR\x05users2\x80\x02\n" +
+	"\x05users\x18\x01 \x03(\v2\v.hello.UserR\x05users\"$\n" +
+	"\x12GetUserByIdRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\"B\n" +
+	"\x06UserDb\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
+	"\x05email\x18\x03 \x01(\tR\x05email\"?\n" +
+	"\x13GetUserByIdResponse\x12(\n" +
+	"\busers_db\x18\x01 \x01(\v2\r.hello.UserDbR\ausersDb2\xc8\x02\n" +
 	"\vUserService\x127\n" +
 	"\bSayHello\x12\x13.hello.HelloRequest\x1a\x14.hello.HelloResponse\"\x00\x129\n" +
 	"\n" +
 	"SayGoodbye\x12\x13.hello.HelloRequest\x1a\x14.hello.HelloResponse\"\x00\x12C\n" +
 	"\n" +
 	"CreateUser\x12\x18.hello.CreateUserRequest\x1a\x19.hello.CreateUserResponse\"\x00\x128\n" +
-	"\aGetUser\x12\x13.hello.HelloRequest\x1a\x16.hello.GetUserResponse\"\x00B\x12Z\x10grpc/hello;hellob\x06proto3"
+	"\aGetUser\x12\x13.hello.HelloRequest\x1a\x16.hello.GetUserResponse\"\x00\x12F\n" +
+	"\vGetUserById\x12\x19.hello.GetUserByIdRequest\x1a\x1a.hello.GetUserByIdResponse\"\x00B\x12Z\x10grpc/hello;hellob\x06proto3"
 
 var (
-	file_hello_proto_rawDescOnce sync.Once
-	file_hello_proto_rawDescData []byte
+	file_protobuf_hello_proto_rawDescOnce sync.Once
+	file_protobuf_hello_proto_rawDescData []byte
 )
 
-func file_hello_proto_rawDescGZIP() []byte {
-	file_hello_proto_rawDescOnce.Do(func() {
-		file_hello_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_hello_proto_rawDesc), len(file_hello_proto_rawDesc)))
+func file_protobuf_hello_proto_rawDescGZIP() []byte {
+	file_protobuf_hello_proto_rawDescOnce.Do(func() {
+		file_protobuf_hello_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_protobuf_hello_proto_rawDesc), len(file_protobuf_hello_proto_rawDesc)))
 	})
-	return file_hello_proto_rawDescData
+	return file_protobuf_hello_proto_rawDescData
 }
 
-var file_hello_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
-var file_hello_proto_goTypes = []any{
-	(*HelloRequest)(nil),       // 0: hello.HelloRequest
-	(*HelloResponse)(nil),      // 1: hello.HelloResponse
-	(*User)(nil),               // 2: hello.User
-	(*CreateUserRequest)(nil),  // 3: hello.CreateUserRequest
-	(*CreateUserResponse)(nil), // 4: hello.CreateUserResponse
-	(*GetUserRequest)(nil),     // 5: hello.GetUserRequest
-	(*GetUserResponse)(nil),    // 6: hello.GetUserResponse
+var file_protobuf_hello_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_protobuf_hello_proto_goTypes = []any{
+	(*HelloRequest)(nil),        // 0: hello.HelloRequest
+	(*HelloResponse)(nil),       // 1: hello.HelloResponse
+	(*User)(nil),                // 2: hello.User
+	(*CreateUserRequest)(nil),   // 3: hello.CreateUserRequest
+	(*CreateUserResponse)(nil),  // 4: hello.CreateUserResponse
+	(*GetUserRequest)(nil),      // 5: hello.GetUserRequest
+	(*GetUserResponse)(nil),     // 6: hello.GetUserResponse
+	(*GetUserByIdRequest)(nil),  // 7: hello.GetUserByIdRequest
+	(*UserDb)(nil),              // 8: hello.UserDb
+	(*GetUserByIdResponse)(nil), // 9: hello.GetUserByIdResponse
 }
-var file_hello_proto_depIdxs = []int32{
+var file_protobuf_hello_proto_depIdxs = []int32{
 	2, // 0: hello.CreateUserRequest.user:type_name -> hello.User
 	2, // 1: hello.CreateUserResponse.user:type_name -> hello.User
 	2, // 2: hello.GetUserResponse.users:type_name -> hello.User
-	0, // 3: hello.UserService.SayHello:input_type -> hello.HelloRequest
-	0, // 4: hello.UserService.SayGoodbye:input_type -> hello.HelloRequest
-	3, // 5: hello.UserService.CreateUser:input_type -> hello.CreateUserRequest
-	0, // 6: hello.UserService.GetUser:input_type -> hello.HelloRequest
-	1, // 7: hello.UserService.SayHello:output_type -> hello.HelloResponse
-	1, // 8: hello.UserService.SayGoodbye:output_type -> hello.HelloResponse
-	4, // 9: hello.UserService.CreateUser:output_type -> hello.CreateUserResponse
-	6, // 10: hello.UserService.GetUser:output_type -> hello.GetUserResponse
-	7, // [7:11] is the sub-list for method output_type
-	3, // [3:7] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	8, // 3: hello.GetUserByIdResponse.users_db:type_name -> hello.UserDb
+	0, // 4: hello.UserService.SayHello:input_type -> hello.HelloRequest
+	0, // 5: hello.UserService.SayGoodbye:input_type -> hello.HelloRequest
+	3, // 6: hello.UserService.CreateUser:input_type -> hello.CreateUserRequest
+	0, // 7: hello.UserService.GetUser:input_type -> hello.HelloRequest
+	7, // 8: hello.UserService.GetUserById:input_type -> hello.GetUserByIdRequest
+	1, // 9: hello.UserService.SayHello:output_type -> hello.HelloResponse
+	1, // 10: hello.UserService.SayGoodbye:output_type -> hello.HelloResponse
+	4, // 11: hello.UserService.CreateUser:output_type -> hello.CreateUserResponse
+	6, // 12: hello.UserService.GetUser:output_type -> hello.GetUserResponse
+	9, // 13: hello.UserService.GetUserById:output_type -> hello.GetUserByIdResponse
+	9, // [9:14] is the sub-list for method output_type
+	4, // [4:9] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
-func init() { file_hello_proto_init() }
-func file_hello_proto_init() {
-	if File_hello_proto != nil {
+func init() { file_protobuf_hello_proto_init() }
+func file_protobuf_hello_proto_init() {
+	if File_protobuf_hello_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_hello_proto_rawDesc), len(file_hello_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_protobuf_hello_proto_rawDesc), len(file_protobuf_hello_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_hello_proto_goTypes,
-		DependencyIndexes: file_hello_proto_depIdxs,
-		MessageInfos:      file_hello_proto_msgTypes,
+		GoTypes:           file_protobuf_hello_proto_goTypes,
+		DependencyIndexes: file_protobuf_hello_proto_depIdxs,
+		MessageInfos:      file_protobuf_hello_proto_msgTypes,
 	}.Build()
-	File_hello_proto = out.File
-	file_hello_proto_goTypes = nil
-	file_hello_proto_depIdxs = nil
+	File_protobuf_hello_proto = out.File
+	file_protobuf_hello_proto_goTypes = nil
+	file_protobuf_hello_proto_depIdxs = nil
 }

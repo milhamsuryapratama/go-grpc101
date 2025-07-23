@@ -64,10 +64,10 @@ func (s *greetingService) GetUserById(ctx context.Context, req *hello.GetUserByI
 }
 
 func main() {
-	db = connectToDatabase() // connect ke database
+	db = connectToDatabase() // mengconnect ke database
 	defer db.Close()
-	// start gRPC server disini
-	port_server := ":8081"
+	// untuk mengstart grpc server
+	port_server := ":8080"
 	listener, err := net.Listen("tcp", port_server)
 	if err != nil {
 		log.Fatalf("Failed to listen on %s: %v", port_server, err)
