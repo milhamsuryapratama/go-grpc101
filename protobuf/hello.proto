@@ -12,6 +12,7 @@ service UserService {
   
   rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) {}
   rpc GetUser (HelloRequest) returns (GetUserResponse) {}
+  rpc GetUserById (GetUserByIdRequest) returns (GetUserByIdResponse) {}
 }
 
 // The request message containing the user's name.
@@ -47,4 +48,16 @@ message GetUserRequest {
 
 message GetUserResponse {
   repeated User users = 1;
+}
+
+message GetUserByIdRequest {
+  int32 id = 1;
+}
+message UserDb {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+}
+message GetUserByIdResponse {
+  UserDb users_db = 1;
 }
